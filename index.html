@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <title>ff</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: '微軟正黑體';
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url(./images/bg-full.jpg);
+      background-position: center;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .container {
+      display: flex;
+      width: 70%;
+      height: 100vh;
+      margin: auto;
+      align-items: center;
+      border: 1px solid #333;
+    }
+
+    .left {
+      width: 50%;
+      height: 70%;
+      background: url(./images/main.jpg) no-repeat center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 10%;
+      color: white;
+    }
+
+    .left img {
+      width: 50%;
+    }
+
+
+    .right {
+      width: 50%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top {
+      width: 100%;
+      height: 50%;
+      background-color: #808080;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .top img {
+      height: 100%;
+      margin-top: 5%;
+    }
+
+    .top .text {
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 10%;
+    }
+
+    .bottom {
+      width: 100%;
+      height: 50%;
+      background-color: #000;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .bottom img {
+      height: 100%;
+      margin-top: 5%;
+    }
+
+    .bottom .text2 {
+      width: 30%;
+      height: 100%;
+      padding-right: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #fff;
+      position: absolute;
+      left: 64%;
+      top: 17.5%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="./images/ps4-ff7.png">
+      <h1>AVAILABLE NOW</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores possimus eum sed minima reprehenderit natus
+        quas sint nihil ex. Molestias repellat, fuga nobis delectus error quae repudiandae id autem possimus?</p>
+    </div>
+    <div class="right">
+      <div class="top">
+        <div class="text">
+          <h1>Cloud</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores odio eos totam. Vitae molestias assumenda
+            non rem autem eos, facere officiis expedita aut, temporibus hic reprehenderit, blanditiis consectetur
+            tempore deserunt.</p>
+        </div>
+        <img src="./images/cloud.png" alt="">
+      </div>
+      <div class="bottom">
+        <img src="./images/tifa.png" alt="">
+        <div class="text2">
+          <h1>Tifa</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores odio eos totam. Vitae molestias assumenda
+            non rem autem eos, facere officiis expedita aut, temporibus hic reprehenderit, blanditiis consectetur
+            tempore deserunt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
