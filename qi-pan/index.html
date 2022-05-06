@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: '標楷體';
+      list-style: none;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .text {
+      writing-mode: vertical-lr;
+      font-size: 38px;
+    }
+
+    .chessBoard {
+      width: 700px;
+      height: 770px;
+      border: 1px solid black;
+      margin: 0 30px;
+      padding: 68px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+
+    .col {
+      width: 70px;
+      height: 70px;
+      border: 1px solid black;
+      border-bottom: none;
+    }
+
+    .col2_8 {
+      width: 70px;
+      height: 70px;
+      border: 1px solid black;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    .col_mid {
+      width: 560px;
+      height: 70px;
+      border: 1px solid black;
+      border-bottom: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 40px;
+    }
+
+    .col_bottom {
+      border-bottom: 1px solid black;
+    }
+
+    .hiddenBox {
+      /* 關鍵 */
+      /* 沒 position:absolute 就會排在text後面 */
+      position: absolute;
+      width: 620px;
+      height: 690px;
+      border: 1px solid black;
+    }
+
+    .blackChess {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="text">棋盤裡，車無輪，馬無韁，叫聲將軍堤防堤防</div>
+    <div class="hiddenBox"></div>
+    <!-- 棋盤 -->
+    <div class="chessBoard">
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col_mid">
+        <div>楚河</div>
+        <div>漢界</div>
+      </div>
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col2_8"></div>
+      <div class="col col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 col_bottom"></div>
+    </div>
+    <div class="text">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</div>
+  </div>
+</body>
+
+</html>
