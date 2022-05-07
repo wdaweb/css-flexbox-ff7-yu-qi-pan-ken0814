@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>qi-pan</title>
   <style>
     * {
       margin: 0;
@@ -28,6 +28,7 @@
       font-size: 38px;
     }
 
+    /* 棋盤 */
     .chessBoard {
       width: 700px;
       height: 770px;
@@ -36,10 +37,11 @@
       padding: 68px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       align-content: flex-start;
     }
 
-
+    /* 格子 */
     .col {
       width: 70px;
       height: 70px;
@@ -53,6 +55,7 @@
       border: 1px solid black;
       border-left: none;
       border-bottom: none;
+      position: relative;
     }
 
     .col_mid {
@@ -66,24 +69,148 @@
       font-size: 40px;
     }
 
-    .col_bottom {
+    .borderBottom {
       border-bottom: 1px solid black;
     }
 
-    .hiddenBox {
-      /* 關鍵 */
-      /* 沒 position:absolute 就會排在text後面 */
-      position: absolute;
-      width: 620px;
-      height: 690px;
-      border: 1px solid black;
+    /* 線格 */
+    .borderBox_top {
+      width: 140px;
+      height: 140px;
+      position: relative;
     }
 
+    .borderBox_bottom {
+      width: 140px;
+      height: 140px;
+      position: relative;
+    }
+
+
+    /* 斜線 */
+    .borderBox_top::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 70px;
+      border-bottom: 1px solid black;
+      transform-origin: bottom center;
+      transform: rotate(45deg) scale(1.414) translate(-1px);
+    }
+
+    .borderBox_top::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 67px;
+      border-bottom: 1px solid black;
+      transform-origin: bottom center;
+      transform: rotate(135deg) scale(1.414) translate(1px);
+    }
+
+    .borderBox_bottom::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 70px;
+      border-bottom: 1px solid black;
+      transform-origin: bottom center;
+      transform: rotate(45deg) scale(1.414) translate(-1px);
+    }
+
+    .borderBox_bottom::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 67px;
+      border-bottom: 1px solid black;
+      transform-origin: bottom center;
+      transform: rotate(135deg) scale(1.414) translate(1px);
+    }
+
+    /* 黑棋 */
     .blackChess {
       width: 50px;
       height: 50px;
       border: 1px solid black;
       border-radius: 50%;
+      background-color: #fff;
+      line-height: 50px;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    /* 紅棋 */
+    .redChess {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      border-radius: 50%;
+      background-color: #fff;
+      line-height: 50px;
+      font-size: 35px;
+      text-align: center;
+      color: red;
+    }
+
+    /* 線隱藏盒 */
+    .hiddenBox {
+      position: absolute;
+      width: 140px;
+      height: 630px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* 車 隱藏盒 */
+    .hiddenBox_1 {
+      /* 關鍵 */
+      /* 沒 position:absolute 就會排在text後面 */
+      /* border: 1px solid black; */
+      position: absolute;
+      width: 610px;
+      height: 680px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* 包隱藏盒 */
+    .hiddenBox_2 {
+      position: absolute;
+      width: 470px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* 卒隱藏盒 */
+    .hiddenBox_3 {
+      position: absolute;
+      width: 610px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+
+    .top {
+      width: 610px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .bottom {
+      width: 610px;
+      height: 330px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
     }
   </style>
 </head>
@@ -91,7 +218,11 @@
 <body>
   <div class="container">
     <div class="text">棋盤裡，車無輪，馬無韁，叫聲將軍堤防堤防</div>
-    <div class="hiddenBox"></div>
+    <!-- 線 -->
+    <div class="hiddenBox">
+      <div class="borderBox_top"></div>
+      <div class="borderBox_bottom"></div>
+    </div>
     <!-- 棋盤 -->
     <div class="chessBoard">
       <div class="col"></div>
@@ -155,13 +286,69 @@
       <div class="col2_8"></div>
       <div class="col2_8"></div>
       <div class="col col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
-      <div class="col2_8 col_bottom"></div>
+      <div class="col2_8 borderBottom"></div>
+      <div class="col2_8 borderBottom"></div>
+      <div class="col2_8 borderBottom"></div>
+      <div class="col2_8 borderBottom"></div>
+      <div class="col2_8 borderBottom"></div>
+      <div class="col2_8 borderBottom"></div>
+      <div class="col2_8 borderBottom"></div>
+    </div>
+    <!-- 車 馬 象 士 將 士 象 馬 車 -->
+    <!-- 俥 傌 相 仕 帥 仕 相 傌 俥 -->
+    <div class="hiddenBox_1">
+      <div class="top">
+        <div class="blackChess">車</div>
+        <div class="blackChess">馬</div>
+        <div class="blackChess">象</div>
+        <div class="blackChess">士</div>
+        <div class="blackChess">將</div>
+        <div class="blackChess">士</div>
+        <div class="blackChess">象</div>
+        <div class="blackChess">馬</div>
+        <div class="blackChess">車</div>
+      </div>
+      <div class="bottom">
+        <div class="redChess">俥</div>
+        <div class="redChess">傌</div>
+        <div class="redChess">相</div>
+        <div class="redChess">仕</div>
+        <div class="redChess">帥</div>
+        <div class="redChess">仕</div>
+        <div class="redChess">相</div>
+        <div class="redChess">傌</div>
+        <div class="redChess">俥</div>
+      </div>
+    </div>
+    <!-- 包 -->
+    <!-- 炮 -->
+    <div class="hiddenBox_2">
+      <div class="top" style="width:470px">
+        <div class="blackChess">包</div>
+        <div class="blackChess">包</div>
+      </div>
+      <div class="bottom" style="width:470px">
+        <div class="redChess">炮</div>
+        <div class="redChess">炮</div>
+      </div>
+    </div>
+    <!-- 卒 -->
+    <!-- 兵 -->
+    <div class="hiddenBox_3">
+      <div class="top">
+        <div class="blackChess">卒</div>
+        <div class="blackChess">卒</div>
+        <div class="blackChess">卒</div>
+        <div class="blackChess">卒</div>
+        <div class="blackChess">卒</div>
+      </div>
+      <div class="bottom">
+        <div class="redChess">兵</div>
+        <div class="redChess">兵</div>
+        <div class="redChess">兵</div>
+        <div class="redChess">兵</div>
+        <div class="redChess">兵</div>
+      </div>
     </div>
     <div class="text">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</div>
   </div>
